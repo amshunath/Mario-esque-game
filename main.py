@@ -118,6 +118,7 @@ class goblin (object):
             win.blit(text,(250-text.get_width()/2 , 200))
             pygame.display.update()
             pygame.time.delay(1000)
+            self.health=-5
         elif self.health>0 :
             self.health-=5
         print("hit")
@@ -183,8 +184,8 @@ while run:
                 if gob.health>=0:
                     hitsound.play()
                     scr+=10
-                gob.hit()
-                bullets.pop(bullets.index(bullet))
+                    gob.hit()
+                    bullets.pop(bullets.index(bullet))
         if bullet.x <500 and bullet.x>0:
             bullet.x+=bullet.vel
         else:
